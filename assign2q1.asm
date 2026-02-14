@@ -4,4 +4,4 @@
 _start:
     mov x1, #32 //Hello World
     add x0, x1, xzr
-    ret x0
+    bf printf(x0)
