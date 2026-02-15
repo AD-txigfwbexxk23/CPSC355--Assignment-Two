@@ -1,8 +1,12 @@
-.global start
-.section .text
+.global main //Makes the function visible to the linker
 
-_start:
-    mov x19, #32 //Hello World
-    add x0, x19, xzr
-    bf printf
-    return
+
+main: stp x29, x30, [sp, #-16]! //Push the frame pointer and return address onto the stack
+mov x29, sp //Set the frame pointer to the current stack pointer
+
+mov x0, "Meaning of life"
+bl printf //Call printf to print the string
+
+
+ldp x29, x30, [sp], #16 //Pop the frame pointer and return address from the stack
+ret
