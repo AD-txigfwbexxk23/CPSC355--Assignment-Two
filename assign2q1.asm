@@ -1,4 +1,5 @@
-output: "The output of these values is: %d\n"
+output: .string "The output of these values is: %d\n"
+.balign 2
 .global main //Makes the function visible to the linker
 
 
@@ -9,7 +10,9 @@ mov x29, sp //Set the frame pointer to the current stack pointer
 
 //Calulcating answer
 mov x19, #2
-mneg x20, #1,#3
+mov x21, #3
+mov x22, #1
+mneg x20, x21, x22 //-3
 mov x21, #5
 mov x22, #7
 mov x23, #4
