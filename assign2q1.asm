@@ -1,4 +1,4 @@
-fmt: .string "Meaning of life\n"
+fmt: .string "Meaning of life\n %d\n" //Define a string with a format specifier for an integer
 
 .balign 4 //Align the string to an 8-byte boundary
 .global main //Makes the function visible to the linker
