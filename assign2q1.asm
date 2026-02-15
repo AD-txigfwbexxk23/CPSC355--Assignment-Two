@@ -1,6 +1,6 @@
 fmt: .string "Meaning of life\n"
 
-.balign 3 //Align the string to an 8-byte boundary
+.balign 4 //Align the string to an 8-byte boundary
 .global main //Makes the function visible to the linker
 
 
