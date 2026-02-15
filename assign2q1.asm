@@ -11,10 +11,9 @@ mov x29, sp //Set the frame pointer to the current stack pointer
 
 
 
-adrp x0, fmt //Load the page address of the string into x0 (only base memory address)
-add x0, x0, :lo12:fmt //Add the offset of the string to x0 to get the full address
-mov w1, 42
 
+ldr x0,=fmt
+mov w1, 42
 bl printf //Call printf to print the string
 
 
