@@ -40,7 +40,7 @@ bl scanf //Call the scanf function to read an integer from the user
 mov x19, #1 //Creating a starting counter
 ldr x20, =num //Load the value of 'num' into x20
 ldr x21, [x20] //Get the value at the actual memory location
-
+mov x24, xzr //Initialize value to 0
 
 
 
@@ -52,6 +52,8 @@ add x22, x21, #1
 add x23, x21, #2
 mul x24, x21, x22 //Calculate num * (num + 1)
 mul x24, x24, x23 //Calculate num * (num + 1) * (num + 2)
+add x24, x24, x24 //Summing previous answers
+
 
 add x19, x19, #1 //Increment the counter
 
