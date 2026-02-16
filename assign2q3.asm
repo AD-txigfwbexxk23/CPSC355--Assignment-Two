@@ -80,9 +80,6 @@ mov x26, x25 //Set greatest to num2
 b print_output
 
 
-
-
-
 //Printing output:
 print_output:
 ldr x0, =output0 //Load the address of the output format string into x0
@@ -90,6 +87,36 @@ mov x1, x26 //Move the greatest number into x1
 bl printf //Call the printf function to print the greatest number
 
 
+
+//FINDING THE SMALLEST NUMBER
+num0_num1_smallest:
+cmp x21, x23 //Compare num0 and num1
+b.lt num0_num2_smallest
+cmp x23, x25 //Compare num1 and num2
+b.lt set_smallest_num1
+b set_smallest_num2
+
+num0_num2_smallest:
+cmp x21, x25 //Compare num0 and num2
+b.lt set_smallest_num0
+b set_smallest_num2
+
+//Setting the smallest number:
+set_smallest_num0:
+mov x26, x21 //Set smallest to num0
+b print_output_smallest
+set_smallest_num1:
+mov x26, x23 //Set smallest to num1
+b print_output_smallest
+set_smallest_num2:
+mov x26, x25 //Set smallest to num2
+b print_output_smallest
+
+//Printing output:
+print_output_smallest:
+ldr x0, =output1 //Load the address of the output format string into x0
+mov x1, x26 //Move the smallest number into x1
+bl printf //Call the printf function to print the smallest number
 
 
 
