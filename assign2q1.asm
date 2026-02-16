@@ -64,7 +64,7 @@ add x19, x19, #1 //Increment the counter
 
 
 cmp x19, x21 //Compare the counter with the input number again
-b.lt loop //If the counter is less than the input number, continue the loop
+b.le loop //If the counter is less than the input number, continue the loop
 
 
 
