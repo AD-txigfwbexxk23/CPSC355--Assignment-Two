@@ -48,7 +48,7 @@ mov x25, xzr //Initialize value to 0
 
 loop:
 cmp x19, x21 //Compare the counter with the input number
-b.eq endloop //If the counter is equal to the input number, exit the loop
+b.gt endloop //If the counter is equal to the input number, exit the loop
 
 
 
