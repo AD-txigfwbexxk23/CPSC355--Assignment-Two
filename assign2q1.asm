@@ -47,6 +47,11 @@ mov x25, xzr //Initialize value to 0
 
 
 loop:
+cmp x19, x21 //Compare the counter with the input number
+b.eq endloop //If the counter is equal to the input number, exit the loop
+
+
+
 //Calculate the answer:
 add x22, x19, #1
 add x23, x19, #2
@@ -57,9 +62,11 @@ add x25, x25, x24 //Summing previous answers
 
 add x19, x19, #1 //Increment the counter
 
-cmp x19, x21 //Compare the counter with the input number
-b.eq endloop //If the counter is equal to the input number, exit the loop
+
+cmp x19, x21 //Compare the counter with the input number again
 b.lt loop //If the counter is less than the input number, continue the loop
+
+
 
 endloop:
 ldr x0, =output0 //Load the address of the output format string into x0
