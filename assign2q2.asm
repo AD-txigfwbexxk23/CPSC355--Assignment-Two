@@ -50,8 +50,6 @@ b.gt endloop //If the counter is equal to the input number, exit the loop
 
 
 //Calculate the answer:
-ldr x19, =num
-ldr x19, [x19]
 mul x20, x19, x19 //num^2
 mov x21, #2
 mul x22, x19, x21 //2num
