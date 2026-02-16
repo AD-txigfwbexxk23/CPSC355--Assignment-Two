@@ -81,35 +81,6 @@ b print_output
 
 
 
-//FINDING THE SMALLEST NUMBER
-num0_num1:
-cmp x21, x23 //Compare num0 and num1
-b.lt num0_num2
-cmp x23, x25 //Compare num1 and num2
-b.gt set_smallest_num1
-b set_smallest_num2
-
-
-num0_num2:
-cmp x21, x25 //Compare num0 and num2
-b.gt set_smallest_num0
-b set_smallest_num2
-
-//Setting the smallest number:
-set_smallest_num0:
-mov x26, x21 //Set smallest to num0
-b print_output
-set_smallest_num1:
-mov x26, x23 //Set smallest to num1
-b print_output
-set_smallest_num2:
-mov x26, x25 //Set smallest to num2
-b print_output
-
-
-
-
-
 
 
 //Printing output:
