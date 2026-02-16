@@ -51,8 +51,8 @@ b.gt endloop //If the counter is equal to the input number, exit the loop
 
 //Calculate the answer:
 mul x20, x19, x19 //num^2
-mov x21, #2
-mul x22, x19, x21 //2num
+mov x26, #2
+mul x22, x19, x26 //2num
 add x23, x22, #1 //2num + 1
 mul x24, x23, x20 //num^2 * (2*num + 1)
 add x25, x25, x24 //Summing previous answers
