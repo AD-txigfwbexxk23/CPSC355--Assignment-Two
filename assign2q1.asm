@@ -48,9 +48,9 @@ mov x25, xzr //Initialize value to 0
 
 loop:
 //Calculate the answer:
-add x22, x21, #1
-add x23, x21, #2
-mul x24, x21, x22 //Calculate num * (num + 1)
+add x22, x19, #1
+add x23, x19, #2
+mul x24, x19, x22 //Calculate num * (num + 1)
 mul x24, x24, x23 //Calculate num * (num + 1) * (num + 2)
 add x25, x25, x24 //Summing previous answers
 
